@@ -1,0 +1,38 @@
+<div class="outer-box">
+  <div class="logo">
+    <h2>
+      <span style="color: blue; font-weight: bold">F</span>
+      <span style="color: red; font-weight: bold">U</span>
+      <span style="color: yellow; font-weight: bold">N</span>
+      <span style="color: blue; font-weight: bold">D</span>
+      <span style="color: GREEN; font-weight: bold">O</span>
+      <span style="color: RED; font-weight: bold">O</span>
+    </h2>
+    <h1>Sign in</h1>
+    <h2>Use your Fundoo account</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="textfield">
+    <mat-form-field  appearance="outline" >
+      <mat-label>Enter Phone or Email</mat-label>
+      <input matInput placeholder=""  formControlName="email"/>
+      <mat-error>Enter your Email</mat-error>
+    </mat-form-field>
+    <label id="hint" routerLink="/fmail">forgot email?</label>
+    
+    <mat-form-field appearance="outline" >
+      <mat-label>Enter Password</mat-label>
+      <input matInput placeholder="" formControlName="password" />
+      <mat-error>Enter your Password</mat-error>
+    </mat-form-field>
+  
+    <label id="hint" routerLink="/fpwd">forgot password?</label>
+    <h3 id="sentence">Not your computer?Use Guest mode to sign in privately.</h3>
+    <label id="hint">Learn more</label>
+  </div>
+
+  <div class="buttons">
+    <label id="hint1" routerLink="/signup">Create Account</label>
+  <button id="next" variant="outlined">Next</button>
+</div>
+</form>
+</div>

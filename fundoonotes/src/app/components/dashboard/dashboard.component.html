@@ -1,0 +1,46 @@
+
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    
+    <mat-toolbar  class="example-toolbar">
+      <div class="left">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <img id="logo" src="https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png"/>
+      <h1 id="title" class="example-app-name">FUNDOO</h1>
+    </div>
+      
+      <div class='subBox2'>
+        <img src="../../../assets/Searchimg.svg"/>
+        <input id='textarea' type="text" placeholder='Search' />
+    </div>
+
+      <div class="subBox3">
+        <img id="icons" src="../../../assets/Refresh.svg"/>
+        <img id="icons" src="../../../assets/view.svg"/>
+        <img id="icons" src="../../../assets/Setting.svg"/>
+    </div>
+
+    <div class="subBox4">
+        <img id="icons1" src="../../../assets/Apps.svg"/>
+        <img id="icons1" src="../../../assets/Person.svg"/>
+    </div>
+
+    </mat-toolbar>  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+          <a mat-list-item routerLink="/Dashboard/Notes"><img id="side-icons" src="../../../assets/Notes icon.svg"/>Notes</a>
+          <a mat-list-item routerLink="/Dashboard/Remainders" ><img id="side-icons" src="../../../assets/Reminder icon.svg"/>Remainders</a>
+          <a mat-list-item routerLink="/Dashboard/Edit" ><img id="side-icons" src="../../../assets/edit labels icon.svg"/>Edit labels</a>
+          <a mat-list-item routerLink="/Dashboard/Archive" ><img id="side-icons" src="../../../assets/Archive.svg"/>Archive</a>
+          <a mat-list-item routerLink="/Dashboard/Trash" ><img id="side-icons" src="../../../assets/Trash icon.svg"/>Trash</a>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

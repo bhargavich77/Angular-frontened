@@ -1,0 +1,25 @@
+<div class="outer-box">
+  <div class="logo">
+    <h2>
+      <span style="color: blue; font-weight: bold">F</span>
+      <span style="color: red; font-weight: bold">U</span>
+      <span style="color: yellow; font-weight: bold">N</span>
+      <span style="color: blue; font-weight: bold">D</span>
+      <span style="color: GREEN; font-weight: bold">O</span>
+      <span style="color: RED; font-weight: bold">O</span>
+    </h2>
+    <h1>Find your email</h1>
+    <h2>Enter your phone number or recovery email</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+    <mat-form-field class="textfield" appearance="outline" >
+      <mat-label>Phone number or email</mat-label>
+      <input matInput placeholder="" formControlName="email" />
+      <mat-error>Enter your Email properly</mat-error>
+    </mat-form-field>
+  </div>
+  <button id="next" variant="outlined">Next</button>
+  
+</form>
+</div>
+</div>

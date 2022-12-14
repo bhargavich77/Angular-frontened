@@ -1,0 +1,105 @@
+.outer-box{
+    width:60vw;
+    height:98vh;
+    display:flex;
+    flex-direction: row;
+    border:1px solid grey;
+    justify-content: space-evenly;
+    margin:auto;
+    
+    border-radius: 10px;
+    align-items: center;
+}
+.sub-box1{
+    text-align: left;
+    width:60%;
+    padding-left:40px;
+    margin-top:-100px;
+    align-items: center;
+    justify-items: auto;
+    
+    
+}
+.textfield-sign{
+    display: flex;
+    flex-direction: row;
+    width:450px;
+    justify-content: space-between;
+   
+    
+}
+.passfield-sign{
+    display: flex;
+    justify-content: space-between;
+    padding-top:20px;
+    width:450px;
+    
+   
+}
+.user-field{
+    display: flex;
+    justify-content:left;
+    width:450px;
+    flex-direction: column;
+
+}
+#texting{
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+#texting1{
+    font-size: 18px;
+    padding-bottom: 20px;
+    text-align: left;
+    width:100%;
+}
+#hint{
+    
+    font-size: 20px;
+    color:blue;
+    
+}
+.checkbox-main {
+    display: flex;
+    flex-direction: row;
+    
+
+}
+#show-pwd {
+    padding-left: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.sub-box2{
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    
+    margin-left: -50px;
+}
+p{
+    font-size:20px;
+    font-weight: lighter;
+    text-align: center;
+}
+.bottom{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+    width:450px;
+}
+#signin-instead{
+    color:blue;
+    
+}
+#continue{
+    color:white;
+    background-color: rgb(45, 45, 231);
+    font-size: 20px;
+    border-color: white;
+    height: 50px;
+    width:100px;
+    border-radius: 10px;
+}
