@@ -1,16 +1,18 @@
-        <div class='MainDiv'>
+        <div class='MainDiv-createnote'>
             <form [formGroup]="NoteForm" (ngSubmit)="onSubmit()">
-            <div class='subDiv'>
+            <div class='subDiv-createnote'>
 
-            <input  id='text-one' type="text" placeholder='Title'  formControlName="Title" />
+            <input  id='text-one-createnote' type="text" placeholder='Title'  formControlName="Title" />
            <img id="push-icon" src="../../../assets/Pushpin.svg" />
             </div>
-            <div class='subDiv1'>
-            <input  id='text-two' type="text" placeholder='Take a note...'formControlName="Description" />
+            <div class='subDiv1-createnote'>
+            <input  id='text-two-createnote' type="text" placeholder='Take a note...'formControlName="Description" />
             </div>
-            <div class="footer">
+            <div class="footer-createnote">
+                <div class="icons-icons">
             <app-icons></app-icons>
-                <button  id='btn'>Close</button>
+        </div>
+                <button  id='btn-createnote'>Close</button>
             </div>
         </form>
             </div>

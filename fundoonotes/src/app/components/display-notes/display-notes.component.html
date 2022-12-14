@@ -1,11 +1,14 @@
+<div class="outer">
 <div class="MainDiv" *ngFor="let note of childMessage">
   <div class="subDiv">
-    <p>{{ note.title }}</p>
+    <p class="titleline">{{ note.title }}</p>
     <img id="push-icon" src="../../../assets/Pushpin.svg" />
-    <p>{{ note.description }}</p>
   </div>
-
+  <div class="subDiv1">
+    <p class="descline">{{ note.description }}</p>
+  </div>
   <div class="footer">
     <app-icons></app-icons>
   </div>
+</div>
 </div>

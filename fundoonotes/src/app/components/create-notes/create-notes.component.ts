@@ -31,7 +31,7 @@ export class CreateNotesComponent implements OnInit{
       console.log("Note is valid",this.NoteForm.value)
       let notedata={
         title:this.NoteForm.value.Title,
-        description:this.NoteForm.value.description,
+        description:this.NoteForm.value.Description,
        
       }
       this.note.add(notedata).subscribe((res:any)=>{
