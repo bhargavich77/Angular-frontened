@@ -22,7 +22,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-
+import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,8 @@ import {MatListModule} from '@angular/material/list';
     DisplayNotesComponent,
     GetAllNotesComponent,
     TrashComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    UpdateNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +55,9 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatDialogModule,
+    FormsModule,
+    MatMenuModule,
 
   ],
   providers: [],

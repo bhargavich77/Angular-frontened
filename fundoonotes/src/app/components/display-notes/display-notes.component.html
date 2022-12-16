@@ -1,14 +1,16 @@
 <div class="outer">
-<div class="MainDiv" *ngFor="let note of childMessage">
+<div class="MainDiv" *ngFor="let notes of childMessage">
   <div class="subDiv">
-    <p class="titleline">{{ note.title }}</p>
+    <p class="titleline" (click)="openDialog(notes)">{{ notes.title }}</p>
     <img id="push-icon" src="../../../assets/Pushpin.svg" />
   </div>
   <div class="subDiv1">
-    <p class="descline">{{ note.description }}</p>
+    <p class="descline" (click)="openDialog(notes)">{{ notes.description }}</p>
   </div>
   <div class="footer">
     <app-icons></app-icons>
+    
   </div>
 </div>
+
 </div>

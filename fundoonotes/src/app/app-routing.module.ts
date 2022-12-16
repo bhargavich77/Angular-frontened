@@ -10,6 +10,7 @@ import { IconsComponent } from './components/icons/icons.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignComponent } from './components/sign/sign.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
 
 const routes: Routes = [
   {path:'signin', component:LoginComponent},
@@ -22,7 +23,9 @@ const routes: Routes = [
       {path:'Notes', component:GetAllNotesComponent},
       {path:'Archive',component:ArchiveComponent},
       {path:'Trash', component:TrashComponent},
-    ]}
+      
+    ]},
+    {path:'update', component:UpdateNotesComponent},
 ];
 
 @NgModule({
