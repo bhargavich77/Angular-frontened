@@ -1,18 +1,30 @@
 <div class="icons-bar">
     <div class="images">
+        <div>
     <img src="../../../assets/Add alert.svg"/>
+</div>
 
+    <div>
     <img src="../../../assets/Person add.svg"/>
-
+</div>
+<div [matMenuTriggerFor]="color">
     <img src="../../../assets/Palette.svg"/>
-
+    <mat-menu #color="matMenu" fxLayout="row " fxLayoutAlign="start space-between" >
+        <div fxLayout="row wrap" class="colour" fxLayoutAlign="start center" style="padding-left: 3px;">
+           
+        </div>
+    </mat-menu>
+</div>
+<div>
     <img src="../../../assets/Image.svg"/>
-
-    <img src="../../../assets/Archive.svg"/>
+</div>
+    <div >
+    <img (click)="archive()" src="../../../assets/Archive.svg"/>
+</div>
 <div [matMenuTriggerFor]="menu">
     <img src="../../../assets/More.svg"/>
     <mat-menu #menu="matMenu" yPosition="below">
-        <button mat-menu-item >Delete note</button>
+        <button mat-menu-item (click)="deleteNote()">Delete note</button>
         <button mat-menu-item >Add Label</button>
         <button mat-menu-item >Add drawing</button>
         <button mat-menu-item >Make a copy</button>

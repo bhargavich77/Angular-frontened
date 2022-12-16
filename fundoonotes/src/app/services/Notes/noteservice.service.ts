@@ -41,6 +41,7 @@ export class NoteserviceService {
     return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/updateNotes', data, true, header)
   }
 
+  
   archivenote(data:any){
     let header={
       headers: new HttpHeaders({
@@ -48,7 +49,34 @@ export class NoteserviceService {
         'Authorization':this.token
       })
     }
+    console.log(data);
     return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/archiveNotes',data,true,header)
   }
+
+
+  trashnote(data: any) {
+    console.log(data);
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+
+    }
+    return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/trashNotes', data, true, httpOptions)
+
+  }
+
+  changecolor(data:any) {
+    console.log(this.token);
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/changesColorNotes',data, true, header)
+  }
+  
 
 }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { CreateNotesComponent } from './components/create-notes/create-notes.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { ForgotemailComponent } from './components/forgotemail/forgotemail.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
@@ -23,9 +24,11 @@ const routes: Routes = [
       {path:'Notes', component:GetAllNotesComponent},
       {path:'Archive',component:ArchiveComponent},
       {path:'Trash', component:TrashComponent},
-      
+      {path:'createnew' ,component:CreateNotesComponent},
+      {path:'display', component:DisplayNotesComponent},
+      {path:'icons',component:IconsComponent},
     ]},
-    {path:'update', component:UpdateNotesComponent},
+    
 ];
 
 @NgModule({
