@@ -1,4 +1,4 @@
-import { Component ,OnInit,Input} from '@angular/core';
+import { Component ,OnInit,Input,Output,EventEmitter} from '@angular/core';
 import { NoteserviceService } from 'src/app/services/Notes/noteservice.service';
 
 @Component({
@@ -8,21 +8,39 @@ import { NoteserviceService } from 'src/app/services/Notes/noteservice.service';
 })
 export class IconsComponent implements OnInit{
   @Input() notecard: any;
+  @Output() refreshcolor=new EventEmitter<any>();
+  @Output() archiverefresh=new EventEmitter<any>();
+  @Output() trashrefresh=new EventEmitter<any>();
   noteID: any;
   // isArchieve: boolean = false;
   // isDeleted: boolean = false;
-  colorarray = ["#2ECC71","#AF7AC5","#F1948A","#A3E4D7","#F5B7B1","#F5B041","#DC7633","#F1C40F","#AAB7B8","#F1948A","#2ECC71","#F5B041"]
+  // colorarray = ["","","","","","","","","","","",""]
+  colorarray = [{ Colorcode: "#2ECC71" }, 
+  { Colorcode: "#AF7AC5" }, 
+  { Colorcode: "#F1948A" },
+   { Colorcode: "#A3E4D7" }, 
+   { Colorcode: "#F5B7B1" }, 
+   { Colorcode: "#F5B041" },
+    { Colorcode: "#DC7633" }, 
+    { Colorcode: "#F1C40F" }, 
+    { Colorcode: "#AAB7B8" }, 
+    { Colorcode: "#F1948A" }, 
+   { Colorcode: "#2ECC71" },
+    { Colorcode: "#F5B041" }];
   constructor(private note: NoteserviceService) { }
   ngOnInit(): void {
     
   }
   archive(){
+    console.log(this.notecard)
     let data = {
       noteIdList: [this.notecard.id],
       isArchived: true,
     }
+
     console.log(data);
     this.note.archivenote(data).subscribe((result:any)=>{
+      this.archiverefresh.emit(result);
       console.log('note archived successfully',result); 
       
     })
@@ -37,7 +55,7 @@ export class IconsComponent implements OnInit{
     console.log(data);
 
     this.note.trashnote(data).subscribe((result: any) => {
-      
+      this.trashrefresh.emit(result);
       console.log('note deleted',result)
     })
 
@@ -49,7 +67,40 @@ export class IconsComponent implements OnInit{
       color:colour
     }
     this.note.changecolor(data).subscribe((result:any)=>{
+      this.refreshcolor.emit(result)
       console.log('color changed',result)
+    })
+
+  }
+
+  restorenote(){
+    let data = {
+      noteIdList: [this.notecard.id],
+      isDeleted: false,
+    }
+    this.note.trashnote(data).subscribe((result: any) => {
+      console.log('note restored',result)
+    })
+  }
+  deleteforevernote(){
+    let data ={
+      noteIdList: [this.notecard.id],
+      isDeleted: true,
+    }
+    this.note.deleteforever(data).subscribe((result: any) => {
+      
+      console.log('note deleted forever',result)
+      
+    })
+  }
+
+  unArchive(){
+    let data = {
+      noteIdList: [this.notecard.id],
+      isArchived: false,
+    }
+    this.note.archivenote(data).subscribe((result:any)=>{
+      console.log('note unarchived successfully',result); 
     })
 
   }

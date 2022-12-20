@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
 import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 @Component({
@@ -8,6 +8,9 @@ import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog
 })
 export class DisplayNotesComponent  {
   @Input() childMessage:any;
+  @Output() refreshDisplay=new EventEmitter<any>();
+  @Output() messagevent=new EventEmitter<any>();
+  @Output() colorchange=new EventEmitter<any>();
   constructor(public dialog: MatDialog) {}
 
   openDialog(notes:any): void {
@@ -22,6 +25,18 @@ export class DisplayNotesComponent  {
       console.log('The dialog was closed');
      
     });
+  }
+  notearchive(event:any){
+    console.log(event);
+    
+    this.messagevent.emit(event)
+  }
+  iconautorefresh(event:any){
+    console.log(event);   
+    this.refreshDisplay.emit(event)
+  }
+  colorRefresh(event:any){
+   this.colorchange.emit(event)
   }
 
 }

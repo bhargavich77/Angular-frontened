@@ -17,9 +17,11 @@ export class ArchiveComponent implements OnInit {
   archieveNote(){
     this.note.get().subscribe((result:any)=>{
       this.noteList=result.data.data;
+     
       this.noteList=this.noteList.filter((k:any)=>{
         return k.isArchived==true;
       })
+      this.noteList=this.noteList.reverse()
       console.log(this.noteList);
     })
   }

@@ -68,7 +68,7 @@ export class NoteserviceService {
   }
 
   changecolor(data:any) {
-    console.log(this.token);
+    // console.log(this.token);
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -78,5 +78,23 @@ export class NoteserviceService {
     return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/changesColorNotes',data, true, header)
   }
   
+  restore(data:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/trashNotes', data, true, header)
 
+  }
+  deleteforever(data:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/deleteForeverNotes', data, true, header)
+  }
 }

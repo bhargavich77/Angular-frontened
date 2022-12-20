@@ -12,14 +12,16 @@ import { LoginComponent } from './components/login/login.component';
 import { SignComponent } from './components/sign/sign.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
-
+import { AuthenticationGuard } from './authentication.guard';
 const routes: Routes = [
+  {path:'', redirectTo:"/signin",pathMatch:'full'},
   {path:'signin', component:LoginComponent},
   {path:'signup', component:SignComponent},
   {path:'fpwd', component:ForgotpasswordComponent},
   {path:'fmail', component:ForgotemailComponent},
   {path:'icons', component:IconsComponent},
-  {path:'Dashboard', component:DashboardComponent,
+
+  {path:'Dashboard', component:DashboardComponent,canActivate:[AuthenticationGuard],
     children:[
       {path:'Notes', component:GetAllNotesComponent},
       {path:'Archive',component:ArchiveComponent},

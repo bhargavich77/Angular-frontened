@@ -6,6 +6,16 @@
     bottom: 0;
     left: 0;
     right: 0;
+    
+  }
+  .side{
+    // border:1px solid red;
+    width:300px;
+    
+    
+  }
+  #side-wording{
+    font-size: 30px;
   }
   #logo{
     width:70px;
@@ -34,6 +44,7 @@
 
   .example-toolbar{
     justify-content: space-between;
+    
   }
   
   h1.example-app-name {
@@ -44,6 +55,8 @@
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
+    
+    
   }
   
   .example-is-mobile .example-sidenav-container {
@@ -68,6 +81,7 @@
     margin-left:10px;
 
   }
+ 
   #side-icons{
     height:25px;
     width:25px;
@@ -103,5 +117,7 @@
 .left{
   display: flex;
   align-items: center;
+  width:200px;
+  
 }
   

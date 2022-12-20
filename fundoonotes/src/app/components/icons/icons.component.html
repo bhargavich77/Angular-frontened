@@ -9,9 +9,11 @@
 </div>
 <div [matMenuTriggerFor]="color">
     <img src="../../../assets/Palette.svg"/>
-    <mat-menu #color="matMenu" fxLayout="row " fxLayoutAlign="start space-between" >
-        <div fxLayout="row wrap" class="colour" fxLayoutAlign="start center" style="padding-left: 3px;">
-           
+    <mat-menu class="matmenu-color" #color="matMenu"  >
+        <div  class="colour" >
+            <div *ngFor="let colour of colorarray" class="colorBox">
+                <button class="colors" mat-mini-fab  (click)="colorupdate(colour?.Colorcode)" mat-icon-button mat-raised-button [style.background]="colour?.Colorcode"></button>
+            </div>
         </div>
     </mat-menu>
 </div>
@@ -21,6 +23,10 @@
     <div >
     <img (click)="archive()" src="../../../assets/Archive.svg"/>
 </div>
+<div >
+    <img  src="../../../assets/Unarchive.svg" (click)="unArchive()"\/>
+</div>
+
 <div [matMenuTriggerFor]="menu">
     <img src="../../../assets/More.svg"/>
     <mat-menu #menu="matMenu" yPosition="below">
@@ -31,6 +37,17 @@
         <button mat-menu-item >Show check boxes</button>
         <button mat-menu-item >Copy to google Docs</button>
     </mat-menu>
+</div>
+
+<div >
+    <div  matTooltip="Delete forever">
+        <img class="icons" (click)="deleteNote()" src="../../../assets/DeleteForever.svg" >
+    </div>
+
+    <div >
+        <img class="icons"  (click)=" restorenote()" src="../../../assets/RestoreFromTrash.svg" >
+    </div>
+
 </div>
 </div>
 </div>

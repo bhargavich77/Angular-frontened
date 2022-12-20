@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/userservice/user.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,13 +11,14 @@ export class LoginComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder,private user:UserService) { }
+  constructor(private formBuilder: FormBuilder,private user:UserService,private router:Router) { }
 
   ngOnInit() {
       this.registerForm = this.formBuilder.group({
           email: ['', [Validators.required, Validators.email]],
           password: ['', [Validators.required, Validators.minLength(6)]],
       });
+      // localStorage.setItem('SessionUser',this.user)
   }
   onSubmit() {
     this.submitted = true;
@@ -34,6 +35,7 @@ export class LoginComponent implements OnInit {
       this.user.login(signindata).subscribe((res:any)=>{
         console.log(res);
         localStorage.setItem('token',res.id)
+        this.router.navigateByUrl('/Dashboard')
       })
     }
 

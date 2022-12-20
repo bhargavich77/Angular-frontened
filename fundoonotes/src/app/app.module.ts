@@ -26,6 +26,8 @@ import { UpdateNotesComponent } from './components/update-notes/update-notes.com
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
+import { AuthguardServiceService } from './authguard-service.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,9 +60,10 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDialogModule,
     FormsModule,
     MatMenuModule,
+    MatCardModule,
 
   ],
-  providers: [],
+  providers: [AuthguardServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
