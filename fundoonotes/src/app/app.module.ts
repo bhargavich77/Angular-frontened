@@ -28,6 +28,8 @@ import { FormsModule } from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import { AuthguardServiceService } from './authguard-service.service';
+import { FilterpipePipe } from './filterpipe.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,10 @@ import { AuthguardServiceService } from './authguard-service.service';
     GetAllNotesComponent,
     TrashComponent,
     ArchiveComponent,
-    UpdateNotesComponent
+    UpdateNotesComponent,
+    FilterpipePipe,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ import { AuthguardServiceService } from './authguard-service.service';
     FormsModule,
     MatMenuModule,
     MatCardModule,
+    Ng2SearchPipeModule ,
 
   ],
   providers: [AuthguardServiceService],

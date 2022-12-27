@@ -10,20 +10,21 @@
       
       <div class='subBox2'>
         <img src="../../../assets/Searchimg.svg"/>
-        <input id='textarea' type="text" placeholder='Search' />
+        <input id='textarea'  type="text" placeholder='Search' (keyup)="onKeyUp($event)" />
+        
     </div>
-
+    <!-- <div class="right"> -->
       <div class="subBox3">
-        <img id="icons" src="../../../assets/Refresh.svg"/>
-        <img id="icons" src="../../../assets/view.svg"/>
-        <img id="icons" src="../../../assets/Setting.svg"/>
+        <img id="icons" src="../../../assets/refresh_FILL0_wght400_GRAD0_opsz48 (1).svg"/>
+        <img id="icons" src="../../../assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg"/>
+        <img id="icons" src="../../../assets/settings_FILL0_wght400_GRAD0_opsz48.svg"/>
     </div>
 
     <div class="subBox4">
-        <img id="icons1" src="../../../assets/Apps.svg"/>
-        <img id="icons1" src="../../../assets/Person.svg"/>
+        <img id="icons1" src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.svg"/>
+        <img id="icons1" src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg"/>
     </div>
-
+  <!-- </div> -->
     </mat-toolbar>  
     <mat-sidenav-container class="example-sidenav-container"
                            [style.marginTop.px]="mobileQuery.matches ? 100 : 0">

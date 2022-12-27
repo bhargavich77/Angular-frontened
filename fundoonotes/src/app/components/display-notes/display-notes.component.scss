@@ -12,13 +12,14 @@
     // border:1px solid green;
 }
 .colordiv{
-    width: 18.5vw;
+    width: 15vw;
     border: 1px solid grey;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    
+    height: 120px;
+    // border:1px solid green;
     border-radius: 10px;
 }
 .subDiv {
@@ -28,6 +29,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 15px;
+    // border:1px solid red;
 }
 .subDiv1 {
     width: 95%;
@@ -43,13 +46,14 @@
 #push-icon{
     height:30px;
     width:30px;
+    margin-right:-21px;
 }
 
 .footer-icons{
     display: flex;
     // border:1px solid red;
     justify-content: space-between;
-    margin-top: 26px;
+    margin-bottom:5px;
     width:100%;
     padding-right:20px;
     align-items: flex-start;

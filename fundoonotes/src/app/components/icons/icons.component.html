@@ -1,13 +1,13 @@
 <div class="icons-bar">
     <div class="images">
-        <div>
+        <div class="add" *ngIf="!isDeleted">
     <img src="../../../assets/Add alert.svg"/>
 </div>
 
-    <div>
+    <div class="add" *ngIf="!isDeleted">
     <img src="../../../assets/Person add.svg"/>
 </div>
-<div [matMenuTriggerFor]="color">
+<div class="add" *ngIf="!isDeleted" [matMenuTriggerFor]="color">
     <img src="../../../assets/Palette.svg"/>
     <mat-menu class="matmenu-color" #color="matMenu"  >
         <div  class="colour" >
@@ -17,17 +17,17 @@
         </div>
     </mat-menu>
 </div>
-<div>
+<div class="add" *ngIf="!isDeleted">
     <img src="../../../assets/Image.svg"/>
 </div>
-    <div >
+    <div class="add" *ngIf="!isArchieve && !isDeleted" >
     <img (click)="archive()" src="../../../assets/Archive.svg"/>
 </div>
-<div >
+<div class="add" *ngIf="isArchieve && !isDeleted" >
     <img  src="../../../assets/Unarchive.svg" (click)="unArchive()"/>
 </div>
 
-<div [matMenuTriggerFor]="menu">
+<div  class="add" *ngIf="!isDeleted" [matMenuTriggerFor]="menu">
     <img src="../../../assets/More.svg"/>
     <mat-menu #menu="matMenu" yPosition="below">
         <button mat-menu-item (click)="deleteNote()">Delete note</button>
@@ -39,7 +39,7 @@
     </mat-menu>
 </div>
 
-<div >
+<div class="trash-icons" *ngIf="isDeleted" >
     <div  matTooltip="Delete forever">
         <img class="icons" (click)="deleteNote()" src="../../../assets/DeleteForever.svg" >
     </div>

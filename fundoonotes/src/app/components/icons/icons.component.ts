@@ -1,5 +1,8 @@
 import { Component ,OnInit,Input,Output,EventEmitter} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NoteserviceService } from 'src/app/services/Notes/noteservice.service';
+import { ArchiveComponent } from '../archive/archive.component';
+import { TrashComponent } from '../trash/trash.component';
 
 @Component({
   selector: 'app-icons',
@@ -11,9 +14,10 @@ export class IconsComponent implements OnInit{
   @Output() refreshcolor=new EventEmitter<any>();
   @Output() archiverefresh=new EventEmitter<any>();
   @Output() trashrefresh=new EventEmitter<any>();
+  
   noteID: any;
-  // isArchieve: boolean = false;
-  // isDeleted: boolean = false;
+  isArchieve: boolean = false;
+  isDeleted: boolean = false;
   // colorarray = ["","","","","","","","","","","",""]
   colorarray = [{ Colorcode: "#2ECC71" }, 
   { Colorcode: "#AF7AC5" }, 
@@ -27,8 +31,17 @@ export class IconsComponent implements OnInit{
     { Colorcode: "#F1948A" }, 
    { Colorcode: "#2ECC71" },
     { Colorcode: "#F5B041" }];
-  constructor(private note: NoteserviceService) { }
+  constructor(private note: NoteserviceService,private activatedroute:ActivatedRoute) { }
   ngOnInit(): void {
+    // console.log(this.notecard);
+    let Component = this.activatedroute.snapshot.component;
+    if (Component == TrashComponent) {
+         this.isDeleted = true;
+       }
+   
+       if (Component == ArchiveComponent) {
+         this.isArchieve = true;
+       }
     
   }
   archive(){
@@ -100,6 +113,7 @@ export class IconsComponent implements OnInit{
       isArchived: false,
     }
     this.note.archivenote(data).subscribe((result:any)=>{
+     
       console.log('note unarchived successfully',result); 
     })
 

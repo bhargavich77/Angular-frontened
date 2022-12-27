@@ -1,5 +1,6 @@
 <div class="outer" >
-  <div class="MainDiv" *ngFor="let notes of childMessage">
+  <div class="MainDiv" *ngFor="let notes of childMessage | filterpipe:message">
+    
     <div class="colordiv" [style.background]="notes.color">
     <div class="subDiv">
       <p class="titleline" (click)="openDialog(notes)">{{ notes.title }}</p>
@@ -11,8 +12,11 @@
       </p>
     </div>
     <div class="footer-icons">
-      <app-icons [notecard]="notes" (archiverefresh)="notearchive($event)" (trashrefresh)=" iconautorefresh($event)" (refreshcolor)=" colorRefresh($event)"></app-icons>
+      <app-icons [notecard]="notes" (archiverefresh)="notearchive($event)" (trashrefresh)=" iconautorefresh($event)" (refreshcolor)=" colorRefresh($event)" ></app-icons>
     </div>
   </div>
   </div>
 </div>
+
+
+<!-- (refreshunarchive)="unarchiverefresh($event)" -->
