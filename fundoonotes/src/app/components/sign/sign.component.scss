@@ -1,9 +1,9 @@
-.outer-box{
+.outer-box-signup{
     width:60vw;
     height:98vh;
     display:flex;
     flex-direction: row;
-    border:1px solid grey;
+    // border:1px solid grey;
     justify-content: space-evenly;
     margin:auto;
     
@@ -102,4 +102,296 @@ p{
     height: 50px;
     width:100px;
     border-radius: 10px;
+}
+
+
+
+// @media only screen and (max-width: 599px) {
+//     .outer-box-signup{
+//         width:100%;
+//         // border: 1px solid red; 
+//         margin:auto; 
+//         // background-color: red;;
+       
+//     }
+//     h1{
+//         font-size:25px;
+//         font-weight:500;
+//         white-space: nowrap;
+//     }
+//     h2{
+//         font-size:25px;
+//         margin-top:15px;
+//         font-weight: bolder;
+
+//     }
+//     .sub-box1{
+//         margin:auto;
+//         width:100%;
+//         // width:fit-content;
+        
+//     }
+//     .sub-box2 {
+//         visibility: hidden;
+//     }
+//     .textfield-sign{
+//         display: flex;
+//         flex-direction: column;
+//         // border: 1px solid black;
+//     }
+//    .user-field{
+//     display: flex;
+//     flex-direction: column;
+//     // border: 1px solid black;
+//    }
+//    .passfield-sign{
+//     display: flex;
+//     flex-direction: column;
+//     // border: 1px solid black;
+//    }
+//    #hint{
+//     font-size:20px;
+    
+//     white-space: nowrap;
+//    }
+//    #texting1{
+//     font-size:18px;
+    
+//     white-space: nowrap;
+//    }
+//    #signin-instead{
+//     color:rgb(66, 66, 161);
+//    }
+//  }
+//  @media screen and (max-width: 860px) {
+
+//     .outer-box-signup{
+//         width:58vw;
+//         height:45vh;
+//         border: 1px solid grey;
+//         margin:auto;   
+//         align-items: center;
+//         margin-top: 300px;
+//         justify-content: space-between;
+//        margin-left: -0.3px;
+//     }
+//     h1{
+//         font-size:25px;
+//         font-weight:500;
+//         white-space: nowrap;
+//     }
+//     h2{
+//         font-size:25px;
+//         margin-top:15px;
+//         font-weight: bolder;
+
+//     }
+//     .sub-box1{
+//         margin:auto;
+//         width:50%;
+//         margin-left:-5px;
+        
+
+        
+//     }
+//     .sub-box2 {
+//         width:40%;
+//         // size:5vh;
+//         // border:1px solid red;
+//         font-size: 14px;
+//         white-space: nowrap;
+//         margin-right:-2px;
+//     }
+//     #image{
+//         size:30px;
+//         // border:1px solid green;
+
+//     }
+//     .textfield-sign{
+//         display: flex;
+//         flex-direction: row;
+//         width:100%;
+//         justify-content: space-around;
+//         // background-color: red;;
+//         // border: 1px solid black;
+//         gap:1rem;
+        
+//     }
+//     .bottom{
+//         display: flex;
+//         justify-content: space-between;
+//         width:100%;
+//         margin-top: -5px;
+//     }
+//    .user-field{
+//     display: flex;
+//     flex-direction: column;
+//     width:100%;
+//     justify-content:space-between;
+//     // border: 1px solid black;
+//    }
+//    .passfield-sign{
+//     display: flex;
+//     flex-direction: row;
+//     width:100%;
+//     justify-content:space-between;
+//     gap:1rem;
+
+//    }
+//    #hint{
+//     font-size:20px;
+    
+//     white-space: nowrap;
+//    }
+//    #texting1{
+//     font-size:16px;
+//     justify-content: space-between;
+//     white-space: nowrap;
+//    }
+//    #signin-instead{
+//     color:rgb(66, 66, 161);
+//    }
+//  }
+//  @media screen and  (max-width: 1024px) {
+//     .outer-box-signup{
+//         width:50vw;
+//         height: auto;
+//         // border: 10px solid red;
+//         margin:auto;   
+//         align-items: center;
+//         margin-top: 300px;
+//         justify-content: space-between;
+//        margin-left: -0.3px;
+//     }
+//     h1{
+//         font-size:25px;
+//         font-weight:500;
+//         white-space: nowrap;
+//     }
+//     h2{
+//         font-size:25px;
+//         margin-top:15px;
+//         font-weight: bolder;
+
+//     }
+//     .sub-box1{
+//         margin:auto;
+//         width:50%;
+//         margin-left:-5px;
+//     }
+//     .sub-box2 {
+//         width:40%;
+//         font-size: 14px;
+//         white-space: nowrap;
+//         margin-right:-2px;
+//     }
+//     #image{
+//         size:30px;
+//         // border:1px solid green;
+
+//     }
+//     .textfield-sign{
+//         display: flex;
+//         flex-direction: row;
+//         width:100%;
+//         justify-content: space-around;
+//         gap:1rem;
+        
+//     }
+//     .bottom{
+//         display: flex;
+//         justify-content: space-between;
+//         width:100%;
+//         margin-top: -5px;
+//     }
+//    .user-field{
+//     display: flex;
+//     flex-direction: column;
+//     width:100%;
+//     justify-content:space-between;
+//     // border: 1px solid black;
+//    }
+//    .passfield-sign{
+//     display: flex;
+//     flex-direction: row;
+//     width:100%;
+//     justify-content:space-between;
+//     gap:1rem;
+
+//    }
+//    #hint{
+//     font-size:20px;
+    
+//     white-space: nowrap;
+//    }
+//    #texting1{
+//     font-size:16px;
+//     justify-content: space-between;
+//     white-space: nowrap;
+//    }
+//    #signin-instead{
+//     color:rgb(66, 66, 161);
+//    }
+//     }
+
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .outer-box-signup {
+        border: none;
+        width: 100%;
+        // border:1px solid red;
+    .sub-box2{
+        visibility: hidden;
+    }
+    .textfield-sign{
+        display: flex;
+        flex-direction: column;
+    }
+    #texting1{
+        white-space: nowrap;
+    }
+    #hint{
+        white-space: nowrap;
+    }
+    }
+   
+}
+@media screen and (min-width: 601px) and (max-width: 860px) {
+    .outer-box-signup{
+        // border: none;
+        width: 100%;
+        border:1px solid grey;
+        margin:auto;
+        // border: 1px solid yellow;
+    }
+    #texting1{
+        white-space: nowrap;
+    }
+    #hint{
+        white-space: nowrap;
+    }
+    
+}
+@media screen and (min-width: 861px) and (max-width: 1024px) {
+    .outer-box-signup {
+        // border: none;
+        width: 100%;
+        border:1px solid grey;
+        margin:auto;
+        justify-content: space-between;
+        // margin-top: 30px;
+    }
+    .sub-box1{
+        width:50%;
+    }
+    .sub-box2{
+        width:40%;
+    }
+    #texting1{
+        white-space: nowrap;
+    }
+    #hint{
+        white-space: nowrap;
+    }
+    
 }

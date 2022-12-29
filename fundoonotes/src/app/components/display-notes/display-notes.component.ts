@@ -14,9 +14,9 @@ export class DisplayNotesComponent implements OnInit   {
   message:any;
   subscription:any;
   @Input() childMessage:any;
-  @Output() refreshDisplay=new EventEmitter<any>();
+  // @Output() refreshDisplay=new EventEmitter<any>();
   @Output() messagevent=new EventEmitter<any>();
-  @Output() colorchange=new EventEmitter<any>();
+  // @Output() colorchange=new EventEmitter<any>();
   @Output() refreshmessage=new EventEmitter<any>();
   constructor(public dialog: MatDialog, private data:DataService) {}
   ngOnInit() {
@@ -43,20 +43,29 @@ export class DisplayNotesComponent implements OnInit   {
      
     });
   }
-  notearchive(event:any){
-    console.log(event);
-    
-    this.messagevent.emit(event)
-  }
-  iconautorefresh(event:any){
-    console.log(event);   
-    this.refreshDisplay.emit(event)
-  }
-  colorRefresh(event:any){
-   this.colorchange.emit(event)
-  }
-  // unarchiverefresh(event:any){
-  //   this.refreshmessage.emit(event)
+  // notearchive($event:any){
+  //   console.log($event);
+  //   this.message=$event;
+  //   this.messagevent.emit(this.message)
+  // }
+  // iconautorefresh(event:any){
+  //   console.log(event);   
+  //   this.refreshDisplay.emit(event)
+  // }
+  // colorRefresh(event:any){
+  //  this.colorchange.emit(event)
+  // }
+  // unarchiverefresh($event:any){
+  //   console.log($event)
+  //   this.message=$event;
+  //   this.messagevent.emit(this.message)
+  //   // this.messagevent.emit($event)
   // }
   
+
+  recievemsg(event:any){
+    console.log(event)
+    this.refreshmessage.emit(event)
+    
+  }
 }

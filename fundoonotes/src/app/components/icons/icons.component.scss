@@ -14,45 +14,48 @@
   margin-left: 18px;
 }
 
-
-
 .colour {
-  height:auto;
-  width:360px;
-  border: 2px solid blue;
   display: flex;
   flex-wrap: wrap;
-
-  
-  
+  max-width: 500px;
+  padding: 10px 10px 5px 5px;
+  border:1px solid red;
+  text-overflow: clip;
+  white-space: nowrap;
+  display: inline-block;
 }
-// .matmenu-color{
-//   width:200px;
-//   height: auto;
-//   border:10px solid green;
-  
-  
-// }
+
 
 .colors {
+ 
+  background-color: transparent;
   height: 30px;
-  width: 30px;
-  border-radius: 40px;
+  width:30px;
+  border-radius: 20px;
+  margin:2px;
+  border: 0px solid;
   display: flex;
-  flex-wrap: wrap;
-  
-}
-.colorBox {
-  
-  display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  height: auto;
-  // width:30px;
-  // border:2px solid red;
+  border:1px solid yellow;
   
 }
-.trash-icons{
+// .colorBox {
+//   // display: flex;
+//   // flex-wrap: wrap;
+//   // flex-direction: row;
+//   // height: 30px;
+//   // width: 30px;
+//   // border: 2px solid red;
+//   display: flex;
+//   flex-direction: row;
+//   height:40px;
+//   width:40px;
+
+//   // display: block;
+//   border-radius: 10px;
+//   border: 1px solid green;
+// }
+.trash-icons {
   display: flex;
   flex-direction: row;
 }

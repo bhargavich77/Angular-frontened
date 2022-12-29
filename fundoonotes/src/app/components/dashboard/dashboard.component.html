@@ -27,9 +27,9 @@
   <!-- </div> -->
     </mat-toolbar>  
     <mat-sidenav-container class="example-sidenav-container"
-                           [style.marginTop.px]="mobileQuery.matches ? 100 : 0">
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
       <mat-sidenav class="side" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="100">
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list>
           <a id="side-wording" mat-list-item routerLink="/Dashboard/Notes"><img id="side-icons" src="../../../assets/Notes icon.svg"/>Notes</a>
           <a id="side-wording" mat-list-item routerLink="/Dashboard/Remainders" ><img id="side-icons" src="../../../assets/Reminder icon.svg"/>Remainders</a>

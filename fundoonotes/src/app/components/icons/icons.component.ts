@@ -11,10 +11,10 @@ import { TrashComponent } from '../trash/trash.component';
 })
 export class IconsComponent implements OnInit{
   @Input() notecard: any;
-  @Output() refreshcolor=new EventEmitter<any>();
-  @Output() archiverefresh=new EventEmitter<any>();
-  @Output() trashrefresh=new EventEmitter<any>();
-  
+  // @Output() refreshcolor=new EventEmitter<any>();
+  // @Output() archiverefresh=new EventEmitter<any>();
+  // @Output() trashrefresh=new EventEmitter<any>();
+  @Output() event=new EventEmitter<any>();
   noteID: any;
   isArchieve: boolean = false;
   isDeleted: boolean = false;
@@ -53,7 +53,7 @@ export class IconsComponent implements OnInit{
 
     console.log(data);
     this.note.archivenote(data).subscribe((result:any)=>{
-      this.archiverefresh.emit(result);
+      this.event.emit(result);
       console.log('note archived successfully',result); 
       
     })
@@ -68,7 +68,7 @@ export class IconsComponent implements OnInit{
     console.log(data);
 
     this.note.trashnote(data).subscribe((result: any) => {
-      this.trashrefresh.emit(result);
+      this.event.emit(result);
       console.log('note deleted',result)
     })
 
@@ -80,7 +80,7 @@ export class IconsComponent implements OnInit{
       color:colour
     }
     this.note.changecolor(data).subscribe((result:any)=>{
-      this.refreshcolor.emit(result)
+      this.event.emit(result)
       console.log('color changed',result)
     })
 
@@ -91,7 +91,10 @@ export class IconsComponent implements OnInit{
       noteIdList: [this.notecard.id],
       isDeleted: false,
     }
+    console.log(data)
     this.note.trashnote(data).subscribe((result: any) => {
+      console.log(result)
+      this.event.emit(result);
       console.log('note restored',result)
     })
   }
@@ -99,22 +102,27 @@ export class IconsComponent implements OnInit{
     let data ={
       noteIdList: [this.notecard.id],
       isDeleted: true,
+    
     }
+    console.log(data)
     this.note.deleteforever(data).subscribe((result: any) => {
-      
+      console.log(result)
+      this.event.emit(result);
       console.log('note deleted forever',result)
       
     })
   }
 
-  unArchive(){
+  unArchive():void{
     let data = {
       noteIdList: [this.notecard.id],
       isArchived: false,
     }
     this.note.archivenote(data).subscribe((result:any)=>{
-     
+    
       console.log('note unarchived successfully',result); 
+      this.event.emit(result);
+      console.log(result)
     })
 
   }

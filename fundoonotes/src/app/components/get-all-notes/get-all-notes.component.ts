@@ -22,7 +22,7 @@ export class GetAllNotesComponent implements OnInit {
       this.Notesdata=res.data.data;
       this.Notesdata=this.Notesdata.reverse()
       this.Notesdata=this.Notesdata.filter((k:any)=>{
-        return k.isArchived==false;
+        return k.isArchived==false && k.isDeleted==false;
       })
       console.log(this.Notesdata);
      
@@ -32,19 +32,26 @@ export class GetAllNotesComponent implements OnInit {
     console.log(event);
     this.getAllNotes();
   }
-  autodispalay(event:any){
-    console.log(event);
+  // autodispalay(event:any){
+  //   console.log(event);
     
-    this.getAllNotes();
-  }
-  autoarchive(event:any){
-    console.log(event);
-    this.getAllNotes();
-  }
-  iconrefresh(event:any){
-    console.log(event);
-    this.getAllNotes();
-  }
- 
+  //   this.getAllNotes();
+  // }
+  // autoarchive($event:any){
+  //   console.log($event);
+  //   this.getAllNotes();
+  // }
+  // iconrefresh(event:any){
+  //   console.log(event);
+  //   this.getAllNotes();
+  // }
+  // autounarchive($event:any){
+  //   console.log($event);
+  //   this.getAllNotes();
+  // }
   
+
+  receiveData(event:any){
+    this.getAllNotes()
+  }
 }

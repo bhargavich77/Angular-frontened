@@ -22,5 +22,7 @@ export class TrashComponent implements OnInit {
       console.log(this.trashList);
     })
   }
-  
+  receiveData(event:any){
+    this.trash()
+  }
 }

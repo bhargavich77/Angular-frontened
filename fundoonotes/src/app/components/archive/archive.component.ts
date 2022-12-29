@@ -26,10 +26,14 @@ export class ArchiveComponent implements OnInit {
       console.log(this.noteList);
     })
   }
-  receivemessage(event:any){
-    console.log(event);
+  // receivemessage(event:any){
+  //   console.log(event);
     
+  //   this.archieveNote();
+  // }
+  receiveData(event:any){
     this.archieveNote();
+
   }
 }
   

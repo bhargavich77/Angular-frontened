@@ -1,21 +1,4 @@
-// @media screen and (min-width: 320px) and (max-width: 600px) {
-//     .main-box {
-//         border: none;
-//         width: 100%;
-//     }
-
-// }
-// @media screen and (min-width: 601px) and (max-width: 860px) {
-
-// }
-// @media screen and (min-width: 861px) and (max-width: 1024px) {
-
-// }
-
-
-
-
-.outer-box{
+.outer-box-signin{
     width:33vw;
     height:80vh;
     display:flex;
@@ -28,7 +11,9 @@
 }
 .logo{
     justify-items: auto;
+    margin-bottom: -5px;
 }
+
 .textfield{
     width:80%;
     display: flex;
@@ -59,6 +44,7 @@
 #hint1{
     color:blue;
     font-size: 16px;
+    margin-left:-10px;
 }
 #next{
     color:white;
@@ -68,4 +54,31 @@
     height: 50px;
     width:100px;
     border-radius: 10px;
+    margin-top:-20px;
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .outer-box-signin{
+        border: 1px solid red;
+        width:100%;
+        // margin-top: -65px;
+    }
+    
+    
+}
+@media screen and (min-width: 601px) and (max-width: 860px) {
+    .outer-box-signin {
+        border: 1px solid red;
+        width:35vw;
+        // background-color: red;
+    }
+  
+}
+@media screen and (min-width: 861px) and (max-width: 1024px) {
+    .outer-box-signin {
+        border: none;
+        width: 100%;
+    }
 }

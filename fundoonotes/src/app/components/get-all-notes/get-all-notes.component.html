@@ -1,6 +1,6 @@
 <app-create-notes (messageEvent)="autocreatenote($event)"></app-create-notes>
-<app-display-notes [childMessage]="Notesdata" (messagevent)=" autoarchive($event)" (refreshDisplay)=" iconrefresh($event)" (colorchange)=" autodispalay($event)"></app-display-notes>
-
+<!-- <app-display-notes [childMessage]="Notesdata" (messagevent)=" autoarchive($event)" (refreshDisplay)=" iconrefresh($event)" (colorchange)=" autodispalay($event)" (messagevent)=" autounarchive($event)" > </app-display-notes> -->
+<app-display-notes [childMessage]="Notesdata" (refreshmessage)="receiveData($event)" > </app-display-notes>
     
 
 
