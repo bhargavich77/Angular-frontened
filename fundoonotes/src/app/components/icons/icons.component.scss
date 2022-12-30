@@ -17,20 +17,22 @@
 .colour {
   display: flex;
   flex-wrap: wrap;
-  max-width: 500px;
-  padding: 10px 10px 5px 5px;
-  border:1px solid red;
+  width: 180px;
+  height:200px;
+  // padding: 10px 10px 5px 5px;
+  border-radius: 10px;
+  // border:1px solid grey;
   text-overflow: clip;
-  white-space: nowrap;
-  display: inline-block;
+  // white-space: nowrap;
+  // display: inline-block;
 }
 
 
 .colors {
  
   background-color: transparent;
-  height: 30px;
-  width:30px;
+  height: 40px;
+  width:40px;
   border-radius: 20px;
   margin:2px;
   border: 0px solid;
@@ -39,22 +41,7 @@
   border:1px solid yellow;
   
 }
-// .colorBox {
-//   // display: flex;
-//   // flex-wrap: wrap;
-//   // flex-direction: row;
-//   // height: 30px;
-//   // width: 30px;
-//   // border: 2px solid red;
-//   display: flex;
-//   flex-direction: row;
-//   height:40px;
-//   width:40px;
 
-//   // display: block;
-//   border-radius: 10px;
-//   border: 1px solid green;
-// }
 .trash-icons {
   display: flex;
   flex-direction: row;

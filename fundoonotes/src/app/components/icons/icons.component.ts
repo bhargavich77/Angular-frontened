@@ -3,35 +3,34 @@ import { ActivatedRoute } from '@angular/router';
 import { NoteserviceService } from 'src/app/services/Notes/noteservice.service';
 import { ArchiveComponent } from '../archive/archive.component';
 import { TrashComponent } from '../trash/trash.component';
-
+import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit{
+  durationInSeconds = 5;
   @Input() notecard: any;
-  // @Output() refreshcolor=new EventEmitter<any>();
-  // @Output() archiverefresh=new EventEmitter<any>();
-  // @Output() trashrefresh=new EventEmitter<any>();
+  // @Output() =new EventEmitter<any>();
   @Output() event=new EventEmitter<any>();
   noteID: any;
   isArchieve: boolean = false;
   isDeleted: boolean = false;
   // colorarray = ["","","","","","","","","","","",""]
-  colorarray = [{ Colorcode: "#2ECC71" }, 
-  { Colorcode: "#AF7AC5" }, 
-  { Colorcode: "#F1948A" },
-   { Colorcode: "#A3E4D7" }, 
-   { Colorcode: "#F5B7B1" }, 
-   { Colorcode: "#F5B041" },
-    { Colorcode: "#DC7633" }, 
-    { Colorcode: "#F1C40F" }, 
-    { Colorcode: "#AAB7B8" }, 
-    { Colorcode: "#F1948A" }, 
-   { Colorcode: "#2ECC71" },
+  colorarray = [{ Colorcode: "#f28b82" }, 
+  { Colorcode: "#fbbc04" }, 
+  { Colorcode: "#fff475" },
+   { Colorcode: "#ccff90" }, 
+   { Colorcode: "#a7ffeb" }, 
+   { Colorcode: "#cbf0f8" },
+    { Colorcode: "#aecbfa" }, 
+    { Colorcode: "#d7aefb" }, 
+    { Colorcode: "#fdcfe8" }, 
+    { Colorcode: "#e6c9a8" }, 
+   { Colorcode: "#e8eaed" },
     { Colorcode: "#F5B041" }];
-  constructor(private note: NoteserviceService,private activatedroute:ActivatedRoute) { }
+  constructor(private note: NoteserviceService,private activatedroute:ActivatedRoute, private snackBar:MatSnackBar) { }
   ngOnInit(): void {
     // console.log(this.notecard);
     let Component = this.activatedroute.snapshot.component;
@@ -125,5 +124,9 @@ export class IconsComponent implements OnInit{
       console.log(result)
     })
 
+  }
+  openSnackBar(message:any,action:any){
+    this.snackBar.open(message,action,{duration:this.durationInSeconds*1000});
+    this.event.emit(message)
   }
 }

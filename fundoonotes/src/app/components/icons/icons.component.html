@@ -12,7 +12,7 @@
     <mat-menu class="matmenu-color" #color="matMenu"  >
         <div  class="colour" >
             <div *ngFor="let colour of colorarray" class="colorBox">
-                <button class="colors" mat-mini-fab  (click)="colorupdate(colour?.Colorcode)" mat-icon-button mat-raised-button [style.background]="colour?.Colorcode"></button>
+                <button class="colors" mat-mini-fab  (click)="colorupdate(colour?.Colorcode)"  (click)="openSnackBar('Note color changed successfully','Dismiss')" mat-icon-button mat-raised-button [style.background]="colour?.Colorcode"></button>
             </div>
         </div>
     </mat-menu>
@@ -21,16 +21,16 @@
     <img src="../../../assets/Image.svg"/>
 </div>
     <div class="add" *ngIf="!isArchieve && !isDeleted" >
-    <img (click)="archive()" src="../../../assets/Archive.svg"/>
+    <img (click)="archive()" (click)="openSnackBar('Item archived successfully','Dismiss')" src="../../../assets/Archive.svg"/>
 </div>
 <div class="add" *ngIf="isArchieve && !isDeleted" >
-    <img  src="../../../assets/Unarchive.svg" (click)="unArchive()"/>
+    <img  src="../../../assets/Unarchive.svg" (click)="unArchive()"  (click)="openSnackBar('Item unarchived successfully','Dismiss')" />
 </div>
 
 <div  class="add" *ngIf="!isDeleted" [matMenuTriggerFor]="menu">
     <img src="../../../assets/More.svg"/>
     <mat-menu #menu="matMenu" yPosition="below">
-        <button mat-menu-item (click)="deleteNote()">Delete note</button>
+        <button mat-menu-item (click)="deleteNote()" (click)="openSnackBar('Item Deleted successfully','Dismiss')" >Delete note</button>
         <button mat-menu-item >Add Label</button>
         <button mat-menu-item >Add drawing</button>
         <button mat-menu-item >Make a copy</button>
@@ -41,11 +41,11 @@
 
 <div class="trash-icons" *ngIf="isDeleted" >
     <div  matTooltip="Delete forever">
-        <img class="icons" (click)="deleteforevernote()" src="../../../assets/DeleteForever.svg" >
+        <img class="icons" (click)="deleteforevernote()" (click)="openSnackBar('Item Deleted forever','Dismiss')" src="../../../assets/DeleteForever.svg" >
     </div>
 
     <div >
-        <img class="icons"  (click)=" restorenote()" src="../../../assets/RestoreFromTrash.svg" >
+        <img class="icons"  (click)=" restorenote()" (click)="openSnackBar('Item restored successfully','Dismiss')" src="../../../assets/RestoreFromTrash.svg" >
     </div>
 
 </div>

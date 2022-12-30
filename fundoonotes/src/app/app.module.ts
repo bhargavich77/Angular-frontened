@@ -30,6 +30,7 @@ import {MatCardModule} from '@angular/material/card';
 import { AuthguardServiceService } from './authguard-service.service';
 import { FilterpipePipe } from './filterpipe.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +68,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatMenuModule,
     MatCardModule,
     Ng2SearchPipeModule ,
+    MatSnackBarModule,
+   
 
   ],
   providers: [AuthguardServiceService],
