@@ -1,16 +1,17 @@
 .images {
   display: flex;
+  // border: 1px solid red;
+  width:340px;
+  gap: 0.8rem;
 }
 
 .images img {
-  /* flex: 1 0 25%; */
-  /* width: 100%; */
+  // border: 1px solid green;
   width: 25px;
   height: 25px;
   display: flex;
-  justify-content: space-between;
-  // padding: 0px 20px;
-  // margin-left:-10px;
+  justify-content: space-around;
+  // gap:20rem;
   margin-left: 18px;
 }
 

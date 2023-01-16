@@ -1,23 +1,23 @@
-        <div class='MainDiv-createnote'>
-            <form [formGroup]="NoteForm" (ngSubmit)="onSubmit()">
-            <div class='subDiv-createnote'>
-
-            <input  id='text-one-createnote' type="text" placeholder='Title'  formControlName="Title" />
-           <img id="push-icon" src="../../../assets/Pushpin.svg" />
-            </div>
-            <div class='subDiv1-createnote'>
-            <input  id='text-two-createnote' type="text" placeholder='Take a note...'formControlName="Description" />
-            </div>
-            <div class="footer-createnote">
-                <div class="icons-icons">
-            <app-icons></app-icons>
-        </div>
-                <button  id='btn-createnote'>Close</button>
-            </div>
-        </form>
-            </div>
-       
-     
-  
-
-
+ <form [formGroup]="NoteForm" (ngSubmit)="onSubmit()" >
+    <mat-card class="maincontainer">
+             <div class="title" *ngIf="isShow"  >
+                <input name="text" class="title1" type="text" placeholder="Title" formControlName="Title">
+                <mat-error></mat-error>
+                <img height="30px" width="30px" src="../../../assets/Pushpin.svg" alt="">
+             </div>
+             <div class="descript" *ngIf="!isShow || isShow" (click)="Show()" >
+                <input class="title2" type="text" matInput placeholder="Take a note..." formControlName="Description">
+                <mat-error> </mat-error>
+                <div class="icons" *ngIf="!isShow" >
+                   <img  height="25px" width="25px" src="../../../assets/check_box_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                   <img height="25px" width="25px" src="../../../assets/brush_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                   <img height="25px" width="25px" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                </div>
+             </div>
+             <div class="close1" *ngIf="isShow" >
+                <app-icons ></app-icons>
+                <button class="button" (click)="close()" >Close</button>
+             </div>
+            
+    </mat-card>
+    </form>

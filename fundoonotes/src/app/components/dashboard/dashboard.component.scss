@@ -34,10 +34,11 @@
   align-items: center;
 }
 
-a {
-  
-  height: 100px;
-  width: 330px;
+a:hover {
+  background-color: rgb(246, 207, 129);
+  height:50px;
+  width: auto;
+  border:1px solid black;
   justify-content: space-between;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -89,6 +90,8 @@ h1.example-app-name {
 .subBox3 {
   align-items: center;
   opacity: 0.55;
+  display: flex;
+  flex-direction: row;
 }
 .right {
   justify-content: space-between;
@@ -122,4 +125,69 @@ h1.example-app-name {
   display: flex;
   align-items: center;
   width: 200px;
+}
+mat-nav-list{
+  width:200px;
+}
+.gridview{
+  border: 0px;
+  background-color: transparent;
+  padding-left: 0px;
+  padding-right: 27px;
+  opacity:0.7;
+}
+
+.listview{
+  border: 0px;
+  background-color: transparent;
+  padding-left: 0px;
+  padding-right: 27px;
+  opacity:0.7;
+}
+
+.btn-container{
+  display: flex;
+  flex-direction: row;
+  margin: 21px;
+}
+.refresh{
+  margin-right: 30px;
+}
+.listV{
+  margin-right: 30px;
+}
+.set{
+  margin-right: 30px;
+}
+.apps{
+  margin-right: 30px;
+}
+.menu-btn{
+  margin: 25px;
+}
+.logo{
+  width: 52px;
+  height: 52px;
+}
+.srch{
+width: 700px;
+}
+.note{
+display: flex;
+flex-direction: row;
+padding-left: 15px;
+// background-color: #feefc3;
+// background-color: #feefc3;
+}
+.rem{
+display: flex;
+flex-direction: row;
+padding-left: 15px;
+// background-color: #feefc3;
+}
+.label{
+display: flex;
+flex-direction: row;
+padding-left: 15px;
+// background-color: #feefc3;
 }

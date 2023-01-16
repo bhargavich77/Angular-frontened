@@ -13,6 +13,7 @@ export class DisplayNotesComponent implements OnInit   {
   searchText:any;
   message:any;
   subscription:any;
+  gridlist:any;
   @Input() childMessage:any;
   // @Output() refreshDisplay=new EventEmitter<any>();
   @Output() messagevent=new EventEmitter<any>();
@@ -20,6 +21,8 @@ export class DisplayNotesComponent implements OnInit   {
   @Output() refreshmessage=new EventEmitter<any>();
   constructor(public dialog: MatDialog, private data:DataService) {}
   ngOnInit() {
+    this.data.store.subscribe(a=>this.gridlist=a)
+    console.log(this.gridlist)
     this.data.currentMessage.subscribe(message =>{ this.message = message 
       console.log(this.message)})
     
@@ -65,7 +68,6 @@ export class DisplayNotesComponent implements OnInit   {
 
   recievemsg(event:any){
     console.log(event)
-    this.refreshmessage.emit(event)
-    
+    this.refreshmessage.emit(event)  
   }
 }

@@ -1,18 +1,31 @@
-<div class="outer">
-<div class="maindiv">
-    <input  type="text" class="note" [(ngModel)]="Title" />
-    <img id="pin" src="../../../assets/Pushpin.svg"/>
-</div>
+<div class="outer" [style.background]="color">
+  <div class="maindiv">
+    <input
+      type="text"
+      class="note"
+      [(ngModel)]="Title"
+      [style.background]="color"
+    />
+    <img id="pin" src="../../../assets/Pushpin.svg" />
+  </div>
   <div class="subdiv">
-    <input  type="text" class="note" [(ngModel)]="Description" />
+    <input
+      type="text"
+      class="note"
+      [(ngModel)]="Description"
+      [style.background]="color"
+    />
   </div>
   <div class="footer">
     <div class="icons">
-      <app-icons></app-icons>
+      <app-icons [notecard]="data" (event)="updatenoteRefresh($event)"></app-icons>
     </div>
-    <button class="click" (click)="onNoClick()">UPDATE</button>
+    <button
+      class="click"
+      (click)="onNoClick()"
+      (click)="updatenoteRefresh($event)"
+    >
+      UPDATE
+    </button>
   </div>
 </div>
-
- 
-

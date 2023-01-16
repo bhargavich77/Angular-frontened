@@ -15,14 +15,23 @@
     </div>
     <!-- <div class="right"> -->
       <div class="subBox3">
+        <div>
         <img id="icons" src="../../../assets/refresh_FILL0_wght400_GRAD0_opsz48 (1).svg"/>
-        <img id="icons" src="../../../assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg"/>
+        </div>
+        <div *ngIf="grid">
+        <img id="icons" (click)="formatGridView();FormatView()" src="../../../assets/grid_view_FILL0_wght400_GRAD0_opsz48.svg"/>
+      </div>
+      <div *ngIf="!grid">
+        <img id="icons"(click)="formatListView();FormatView()" src="../../../assets/view_agenda_FILL0_wght400_GRAD0_opsz48.svg"/>
+      </div>
+        <div>
         <img id="icons" src="../../../assets/settings_FILL0_wght400_GRAD0_opsz48.svg"/>
+      </div>
     </div>
 
     <div class="subBox4">
         <img id="icons1" src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.svg"/>
-        <img id="icons1" src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg"/>
+        <img id="icons1" (click)="logout($event)" src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg" />
     </div>
   <!-- </div> -->
     </mat-toolbar>  

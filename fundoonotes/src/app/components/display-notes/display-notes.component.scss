@@ -1,29 +1,43 @@
 .MainDiv {
-    width: 18vw;
-    min-height: 50px;
-    max-height: 200px;
-    border: 0px solid grey;
+    width: 19vw;
+    // min-height: 50px;
+    // max-height: 200px;
+    height:auto;
+    // border: 0px solid grey;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     margin:20px;
     // border-radius: 10px;
-    // border:1px solid green;
+    // border:1px solid red;
+    // border: 1px solid gray;
+    border-color: rgb(113, 112, 112);
+    box-shadow: 1px 1px 3px 3px rgba(74, 77, 78, 0.22);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 20px auto;
+    margin-bottom: 30px;
+    margin-left: 4px;
+    margin-right: 30px;
+    // width: 300px;
+    height: 150px;
 }
 .colordiv{
-    width: 15vw;
+    width: 19vw;
     border: 1px solid grey;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    height: 120px;
-    // border:1px solid green;
+    height: 150px;
+   
     border-radius: 10px;
 }
 .subDiv {
-    width:90%;
+    width:100%;
     height: 30%;
     align-items: flex-start;
     display: flex;
@@ -33,7 +47,7 @@
     // border:1px solid red;
 }
 .subDiv1 {
-    width: 95%;
+    width: 100%;
     height: 30%;
 }
 #btn {
@@ -46,11 +60,13 @@
 #push-icon{
     height:30px;
     width:30px;
-    margin-right:-21px;
+    margin-right:10px;
 }
 
 .footer-icons{
+    
     display: flex;
+    
     // border:1px solid red;
     justify-content: space-between;
     margin-bottom:5px;
@@ -58,8 +74,19 @@
     padding-right:20px;
     align-items: flex-start;
 }
-.titleline ,.descline{
+
+.titleline{
     margin-left:20px;
+    width:100%;
+    font-size: 20px;
+    font-weight: 500;
+    // border:1px solid red;
+}
+.descline{
+    margin-left:20px;
+    width:100%;
+    font-size: 15px;
+    // border:1px solid red;
 }
 .outer{
     margin:auto;
@@ -68,7 +95,23 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    margin-left:50px;
+    // margin-left:50px;
+    // justify-content: space-between;
+    // gap:-50px;
+    width:75vw;
     // border:1px solid red;
     
+}
+.gridToList{
+    width: 743px;
+    height: 150px;
+    margin-left: 242px;
+  }
+app-icons{
+    visibility: hidden;
+}
+.MainDiv:hover{
+ app-icons{
+    visibility: visible;
+ }
 }

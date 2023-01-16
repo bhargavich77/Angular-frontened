@@ -31,6 +31,9 @@ import { AuthguardServiceService } from './authguard-service.service';
 import { FilterpipePipe } from './filterpipe.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CollaboratorComponent } from './components/collaborator/collaborator.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +51,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ArchiveComponent,
     UpdateNotesComponent,
     FilterpipePipe,
+    CollaboratorComponent,
     
+   
     
   ],
   imports: [

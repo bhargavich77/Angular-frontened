@@ -4,6 +4,7 @@ import { NoteserviceService } from 'src/app/services/Notes/noteservice.service';
 import { ArchiveComponent } from '../archive/archive.component';
 import { TrashComponent } from '../trash/trash.component';
 import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
+import { HttpService } from 'src/app/services/httpservice/http.service';
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
@@ -30,7 +31,7 @@ export class IconsComponent implements OnInit{
     { Colorcode: "#e6c9a8" }, 
    { Colorcode: "#e8eaed" },
     { Colorcode: "#F5B041" }];
-  constructor(private note: NoteserviceService,private activatedroute:ActivatedRoute, private snackBar:MatSnackBar) { }
+  constructor(private note: NoteserviceService,private activatedroute:ActivatedRoute, private snackBar:MatSnackBar,private http:HttpService) { }
   ngOnInit(): void {
     // console.log(this.notecard);
     let Component = this.activatedroute.snapshot.component;
@@ -129,4 +130,5 @@ export class IconsComponent implements OnInit{
     this.snackBar.open(message,action,{duration:this.durationInSeconds*1000});
     this.event.emit(message)
   }
+  
 }

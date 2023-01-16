@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+    height:auto;
     
 }
 #pin{
@@ -14,10 +14,12 @@
 }
 .outer{
     border-radius:7px;
-    border: 0px solid grey;
+    // border: 1px solid red;
+    // margin:0px;
+    // height: 100%;
 }
 .subdiv{
-    height: 55px;
+    height: 72px;
     display: flex;
     align-items: center;
     border: 0px solid gray;
@@ -49,4 +51,5 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 39px; 
+    
 }

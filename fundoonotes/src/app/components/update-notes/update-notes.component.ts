@@ -11,6 +11,8 @@ export class UpdateNotesComponent implements OnInit {
   Title:any;
   Description:any;
   noteId:any;
+  color:any;
+  message:any;
   @Output() updaterefresh=new EventEmitter<any>();
   constructor(private notes:NoteserviceService,
     public dialogRef: MatDialogRef<UpdateNotesComponent>,
@@ -20,13 +22,15 @@ ngOnInit():void{
   console.log(this.data,this.data.noteId);
   this.Title=this.data.title;
   this.Description=this.data.description;
+  this.color=this.data.color;
 }
   onNoClick(): void {
-    console.log(this.Title,this.Description);
+    console.log(this.Title,this.Description,this.color);
     let data={
       noteId:this.data.id,
       title:this.Title,
       description:this.Description,
+      color:this.color,
     }
     this.notes.updatenote(data).subscribe((response:any)=>{
       console.log(response);
@@ -38,5 +42,7 @@ ngOnInit():void{
   updatenoteRefresh(event:any){
     this.updaterefresh.emit(event)
    }
- 
+ receivemessage(event:any){
+  this.message=event
+ }
 }
