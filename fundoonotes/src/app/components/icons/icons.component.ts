@@ -5,6 +5,8 @@ import { ArchiveComponent } from '../archive/archive.component';
 import { TrashComponent } from '../trash/trash.component';
 import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
 import { HttpService } from 'src/app/services/httpservice/http.service';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
@@ -12,6 +14,7 @@ import { HttpService } from 'src/app/services/httpservice/http.service';
 })
 export class IconsComponent implements OnInit{
   durationInSeconds = 5;
+  
   @Input() notecard: any;
   // @Output() =new EventEmitter<any>();
   @Output() event=new EventEmitter<any>();
@@ -31,7 +34,7 @@ export class IconsComponent implements OnInit{
     { Colorcode: "#e6c9a8" }, 
    { Colorcode: "#e8eaed" },
     { Colorcode: "#F5B041" }];
-  constructor(private note: NoteserviceService,private activatedroute:ActivatedRoute, private snackBar:MatSnackBar,private http:HttpService) { }
+  constructor(private note: NoteserviceService,private activatedroute:ActivatedRoute, private snackBar:MatSnackBar,private http:HttpService,private dialog:MatDialog) { }
   ngOnInit(): void {
     // console.log(this.notecard);
     let Component = this.activatedroute.snapshot.component;
@@ -80,7 +83,7 @@ export class IconsComponent implements OnInit{
       color:colour
     }
     this.note.changecolor(data).subscribe((result:any)=>{
-      this.event.emit(result)
+      this.event.emit(colour)
       console.log('color changed',result)
     })
 
@@ -130,5 +133,21 @@ export class IconsComponent implements OnInit{
     this.snackBar.open(message,action,{duration:this.durationInSeconds*1000});
     this.event.emit(message)
   }
-  
+  openDialog(data:any): void {
+    const dialogRef = this.dialog.open(CollaboratorComponent, {
+      width:'50vw',
+      height:'37vh',
+      data:this.notecard,
+     
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.event.emit(data)
+      window.location.reload();
+    });
+  }
+//   refresh(): void {
+//     window.location.reload();
+// }
 }

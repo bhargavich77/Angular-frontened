@@ -112,6 +112,12 @@ app-icons{
 }
 .MainDiv:hover{
  app-icons{
+    visibility: visible;  
+ }
+ #push-icon{
     visibility: visible;
  }
+}
+#push-icon{
+    visibility: hidden;
 }

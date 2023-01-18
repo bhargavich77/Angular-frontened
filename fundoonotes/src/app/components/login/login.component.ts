@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
+  valuedata:any
 
   constructor(private formBuilder: FormBuilder,private user:UserService,private router:Router) { }
 
@@ -34,7 +35,13 @@ export class LoginComponent implements OnInit {
       }
       this.user.login(signindata).subscribe((res:any)=>{
         console.log(res);
+        this.valuedata=res;
+        console.log(this.valuedata)
         localStorage.setItem('token',res.id)
+        localStorage.setItem('email',res.email);
+        localStorage.setItem('fname',res.firstName);
+        localStorage.setItem('lname',res.lastName);
+       
         this.router.navigateByUrl('/Dashboard/Notes')
       })
     }

@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/userservice/user.service';
 export class SignComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
+  show=false;
 
   constructor(private formBuilder: FormBuilder,private user:UserService) { }
 
@@ -47,4 +48,9 @@ export class SignComponent implements OnInit {
     // display form values on success
     
 }
+
+
+password(){
+  this.show=!this.show;
+  }
 }

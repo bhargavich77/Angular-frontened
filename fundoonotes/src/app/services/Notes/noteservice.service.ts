@@ -99,4 +99,37 @@ export class NoteserviceService {
     }
     return this.http.postservice('http://fundoonotes.incubation.bridgelabz.com/api/notes/deleteForeverNotes', data, true, header)
   }
+  addCollab(id:any,data:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postservice(`http://fundoonotes.incubation.bridgelabz.com/api/notes/${id}/AddcollaboratorsNotes`, data, true, header)
+  }
+  removeCollab(id:any,collaboratorUserId:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.deleteservice(`http://fundoonotes.incubation.bridgelabz.com/api/notes/${id}/removeCollaboratorsNotes/${collaboratorUserId}`, true, header)
+  }
+  searchuserlist(data:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postservice(`http://fundoonotes.incubation.bridgelabz.com/api/user/searchUserList`,data, true, header)
+  }
 }
+
+
+
+
+
+

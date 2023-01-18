@@ -1,0 +1,112 @@
+.outer{
+    border:1px solid white;
+    border-radius: 20px;
+    width:auto;
+    height:auto;
+    margin:auto;
+}
+.title{
+    margin-top:10px;
+}
+.collaborators{
+    font-size: 30px;
+    margin-top:5px;
+}
+.listofpersons{
+    display: flex;
+    flex-direction: row;
+    gap:1.5rem;
+}
+.listofpersonsadded{
+    display: flex;
+    flex-direction: row;
+    gap:1.3rem;
+}
+.person{
+    margin-top:20px;
+    font-size: 18px;
+   outline: none;
+   
+    width:500px;
+}
+.mail-img{
+    height:40px;
+    border-radius: 30px;
+}
+.actions{
+    // border:1px solid red;
+    border:none;
+    letter-spacing: .01785714em;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25rem;
+    height: 36px;
+    margin-top: 7px;
+    background-color: rgb(215, 206, 206);
+    // margin-left: 100px;
+    // margin-bottom: 5px;
+}
+.actions1{
+    // border:1px solid red;
+    border:none;
+    letter-spacing: .01785714em;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25rem;
+    height: 36px;
+    margin-top: 7px;
+    margin-right: 30px;
+    background-color: rgb(215, 206, 206);
+    // margin-bottom: 5px;
+}
+.buttons{
+    gap:10rem;
+    // margin:auto;
+}
+.footer{
+    background-color: rgb(215, 206, 206);
+    height: 50px;
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+    margin-top: 23px;
+   
+}
+h4{
+    font-weight: bold;
+    font-size: 18px;
+}
+p{
+    font-size: 18px;
+    // margin-bottom: -8px;
+}
+.owner{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    font-weight: lighter;
+    // margin-top: 5px;
+    // gap:1rem;
+    height:25px;
+    font-style: italic;
+    // border:1px solid red;
+}
+.let{
+    display:flex;
+    flex-direction: row;
+    gap:1rem;
+}
+.add-mail{
+    display: flex;
+    flex-direction: row;
+    gap:13rem;
+}
+.done{
+    margin-top: 13px;
+    
+}
+.personadd{
+    height: 40px;
+    margin-top: 15px;
+}

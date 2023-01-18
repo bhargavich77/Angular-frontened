@@ -1,12 +1,12 @@
  <form [formGroup]="NoteForm" (ngSubmit)="onSubmit()" >
     <mat-card class="maincontainer">
              <div class="title" *ngIf="isShow"  >
-                <input name="text" class="title1" type="text" placeholder="Title" formControlName="Title">
+                <input name="text" class="title1" type="text" placeholder="Title" formControlName="Title" >
                 <mat-error></mat-error>
                 <img height="30px" width="30px" src="../../../assets/Pushpin.svg" alt="">
              </div>
              <div class="descript" *ngIf="!isShow || isShow" (click)="Show()" >
-                <input class="title2" type="text" matInput placeholder="Take a note..." formControlName="Description">
+                <input class="title2" type="text" matInput placeholder="Take a note..." formControlName="Description" >
                 <mat-error> </mat-error>
                 <div class="icons" *ngIf="!isShow" >
                    <img  height="25px" width="25px" src="../../../assets/check_box_FILL0_wght400_GRAD0_opsz48.svg" alt="">
@@ -16,8 +16,12 @@
              </div>
              <div class="close1" *ngIf="isShow" >
                 <app-icons ></app-icons>
-                <button class="button" (click)="close()" >Close</button>
+                <button class="button" (click)="close()"  >Close</button>
              </div>
             
     </mat-card>
     </form>
+
+    <!-- (click)="clearinputmethod1()" (click)="clearinputmethod2()" -->
+    <!-- (click)="clearSearch()" -->
+    <!-- [(ngModel)]="searchValue" -->

@@ -5,7 +5,7 @@
 </div>
 
     <div class="add" *ngIf="!isDeleted">
-    <img src="../../../assets/Person add.svg"/>
+    <img src="../../../assets/Person add.svg" (click)="openDialog(notecard)"/>
 </div>
 <div class="add" *ngIf="!isDeleted" [matMenuTriggerFor]="color">
     <img src="../../../assets/Palette.svg"/>

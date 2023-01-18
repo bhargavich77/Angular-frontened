@@ -35,14 +35,21 @@ ngOnInit():void{
     this.notes.updatenote(data).subscribe((response:any)=>{
       console.log(response);
       this.updaterefresh.emit(response);
+      window.location.reload();
       
     })
     this.dialogRef.close();
+    
   }
   updatenoteRefresh(event:any){
+    this.color=event
     this.updaterefresh.emit(event)
    }
  receivemessage(event:any){
   this.message=event
  }
+//  recievemsg(event:any){
+//   console.log(event)
+//   this.refreshmessage.emit(event)  
+// }
 }

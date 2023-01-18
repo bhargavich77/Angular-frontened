@@ -11,6 +11,7 @@ export class CreateNotesComponent implements OnInit{
   submitted = false;
   show=false;
   isShow:boolean=false;
+  searchValue:any;
   @Output() messageEvent = new EventEmitter<any>();
   constructor(private formBuilder: FormBuilder,private note:NoteserviceService) { }
 
@@ -53,5 +54,20 @@ export class CreateNotesComponent implements OnInit{
     
     
 }
-
+// get Title():any{
+//   return this.NoteForm.get('Title')
+// }
+// get Description():any{
+//   return this.NoteForm.get('Description')
+// }
+// clearinputmethod1(){
+//   this.Title.reset();
+//   this.Description.reser();
+// }
+// clearinputmethod2(){
+//   this.NoteForm.setValue({Title:'',Description:''});
+// }
+// clearSearch(){
+//   this.searchValue = '';
+// }
 }

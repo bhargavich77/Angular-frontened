@@ -1,1 +1,58 @@
-<p>collaborator works!</p>
+<mat-card class="outer">
+
+    <div class="title">
+        <h3 class="collaborators">Collaborators</h3>
+    </div>
+    <hr width="800px;" size="2" color="grey">
+    <div class="listofpersons">
+        <img class="mail-img" src="../../../assets/mail-icon.png">
+        <div class="mail">
+            <div class="owner">
+            <h4 class="nameofowner">{{fname}} </h4>
+            <h2 class="nameofowner">{{lname}}</h2>
+            <label>(Owner)</label> 
+        </div>
+         <p class="mailid">{{email}}</p>
+         
+        </div>
+    </div>
+    <div class="dispalydata" *ngFor="let show of listarray">
+    <div class="let">
+        <!-- <p class="initial">{{show.firstName}}</p> -->
+        <img height="5%" width="5%" src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+        <div style="padding-left: 10px;">
+            <b>{{show.firstName}}</b>
+            <p>{{show.email}}</p>
+        </div>
+    </div>
+</div>
+    <div class="listofpersonsadded">
+        <img class="personadd" src="../../../assets/Person add.svg">
+        <div class="add-mail">
+           <input type="text" class="person" placeholder="Person or email to share with" (keyup)="searchuser($event)" [matMenuTriggerFor]="menu" [(ngModel)]="selectmail">
+          <img class="done" src="../../../assets/done_FILL0_wght400_GRAD0_opsz48.svg" (click)="addCollab()">
+          
+            <!-- <button >tick</button> -->
+        </div>
+        <mat-menu #menu="matMenu">
+            <div  class="listmails" *ngFor="let collab of listuser " >
+                <mat-list-item role="listitem" (click)="choooseemail(collab)" >{{collab.email}}</mat-list-item>
+            </div>
+        </mat-menu>
+    </div>
+    <div class="footer">
+    <mat-card-actions align="end" class="buttons">
+        <button mat-button class="actions">Cancel</button>
+        <button mat-button class="actions1">Save</button>
+      </mat-card-actions>
+      </div>
+</mat-card>
+
+
+<!-- <mat-card>
+    <mat-card-header>
+      <mat-card-title>Actions Buttons</mat-card-title>
+      <mat-card-subtitle>End</mat-card-subtitle>
+    </mat-card-header>
+    
+  </mat-card> -->

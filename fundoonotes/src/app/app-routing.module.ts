@@ -13,6 +13,7 @@ import { SignComponent } from './components/sign/sign.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { CollaboratorComponent } from './components/collaborator/collaborator.component';
 const routes: Routes = [
   {path:'', redirectTo:"/signin",pathMatch:'full'},
   {path:'signin', component:LoginComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
       {path:'createnew' ,component:CreateNotesComponent},
       {path:'display', component:DisplayNotesComponent},
       {path:'icons',component:IconsComponent},
+      {path:'collab',component:CollaboratorComponent},
     ]},
     
 ];
