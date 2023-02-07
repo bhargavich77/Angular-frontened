@@ -136,7 +136,7 @@ export class IconsComponent implements OnInit{
   openDialog(data:any): void {
     const dialogRef = this.dialog.open(CollaboratorComponent, {
       width:'50vw',
-      height:'37vh',
+      height:'auto',
       data:this.notecard,
      
     });

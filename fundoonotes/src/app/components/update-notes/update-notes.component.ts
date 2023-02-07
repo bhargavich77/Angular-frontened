@@ -48,8 +48,5 @@ ngOnInit():void{
  receivemessage(event:any){
   this.message=event
  }
-//  recievemsg(event:any){
-//   console.log(event)
-//   this.refreshmessage.emit(event)  
-// }
+
 }

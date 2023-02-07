@@ -1,4 +1,5 @@
- <form [formGroup]="NoteForm" (ngSubmit)="onSubmit()" >
+<div class="error" *ngIf="error">{{error}}</div>
+ <form [formGroup]="NoteForm" (ngSubmit)="onSubmit()" *ngIf="!error">
     <mat-card class="maincontainer">
              <div class="title" *ngIf="isShow"  >
                 <input name="text" class="title1" type="text" placeholder="Title" formControlName="Title" >

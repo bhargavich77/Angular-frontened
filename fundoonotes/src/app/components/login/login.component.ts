@@ -5,12 +5,15 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+ 
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   registerForm!: FormGroup;
-  submitted = false;
-  valuedata:any
+  submitted:boolean = false;
+  valuedata:any;
+  error:boolean=false ;
+  show=false;
 
   constructor(private formBuilder: FormBuilder,private user:UserService,private router:Router) { }
 
@@ -43,11 +46,20 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('lname',res.lastName);
        
         this.router.navigateByUrl('/Dashboard/Notes')
-      })
+      },
+      error => {
+        this.error = error;
+        // this.submitted = false;
+      }
+      )
     }
 
     // display form values on success
     
+}
+
+password(){
+  this.show=!this.show;
 }
 }
 

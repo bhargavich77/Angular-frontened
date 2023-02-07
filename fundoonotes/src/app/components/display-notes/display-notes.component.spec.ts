@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FilterpipePipe } from 'src/app/filterpipe.pipe';
 
 import { DisplayNotesComponent } from './display-notes.component';
 
@@ -8,7 +11,9 @@ describe('DisplayNotesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DisplayNotesComponent ]
+      declarations: [ DisplayNotesComponent,FilterpipePipe
+       ],
+       imports:[MatDialogModule,HttpClientModule,]
     })
     .compileComponents();
 

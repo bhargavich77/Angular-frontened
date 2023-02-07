@@ -3,6 +3,8 @@ import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { DataService } from 'src/app/data.service';
 import { Subscription } from 'rxjs';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { NoteserviceService } from 'src/app/services/Notes/noteservice.service';
 @Component({
   selector: 'app-display-notes',
   templateUrl: './display-notes.component.html',
@@ -14,12 +16,13 @@ export class DisplayNotesComponent implements OnInit   {
   message:any;
   subscription:any;
   gridlist:any;
+  
   @Input() childMessage:any;
-  // @Output() refreshDisplay=new EventEmitter<any>();
+  
   @Output() messagevent=new EventEmitter<any>();
-  // @Output() colorchange=new EventEmitter<any>();
+  
   @Output() refreshmessage=new EventEmitter<any>();
-  constructor(public dialog: MatDialog, private data:DataService) {}
+  constructor(public dialog: MatDialog, private data:DataService,private note: NoteserviceService) {}
   ngOnInit() {
     this.data.store.subscribe(a=>this.gridlist=a)
     console.log(this.gridlist)
@@ -29,9 +32,7 @@ export class DisplayNotesComponent implements OnInit   {
     
   }
   
-  // ngOnDestroy() {
-  //   this.subscription.unsubscribe();
-  // }
+  
 
   openDialog(notes:any): void {
     const dialogRef = this.dialog.open(UpdateNotesComponent, {
@@ -46,28 +47,11 @@ export class DisplayNotesComponent implements OnInit   {
      
     });
   }
-  // notearchive($event:any){
-  //   console.log($event);
-  //   this.message=$event;
-  //   this.messagevent.emit(this.message)
-  // }
-  // iconautorefresh(event:any){
-  //   console.log(event);   
-  //   this.refreshDisplay.emit(event)
-  // }
-  // colorRefresh(event:any){
-  //  this.colorchange.emit(event)
-  // }
-  // unarchiverefresh($event:any){
-  //   console.log($event)
-  //   this.message=$event;
-  //   this.messagevent.emit(this.message)
-  //   // this.messagevent.emit($event)
-  // }
   
 
   recievemsg(event:any){
     console.log(event)
     this.refreshmessage.emit(event)  
   }
+ 
 }

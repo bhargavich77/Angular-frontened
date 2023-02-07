@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpService } from '../httpservice/http.service';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClientModule,HttpClient } from '@angular/common/http';
+import { ICreateNote } from 'src/app/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class NoteserviceService {
   token:any;
 
   constructor(private http:HttpService ) {this.token=localStorage.getItem('token') }
-  add(data:any){
+  add(data:ICreateNote){
 
     let header={
                 headers: new HttpHeaders({

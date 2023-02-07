@@ -4,6 +4,7 @@
     width:auto;
     height:auto;
     margin:auto;
+    overflow-y: hidden;
 }
 .title{
     margin-top:10px;
@@ -96,6 +97,8 @@ p{
     display:flex;
     flex-direction: row;
     gap:1rem;
+    // border:1px solid red;
+    width:820px;
 }
 .add-mail{
     display: flex;
@@ -104,9 +107,31 @@ p{
 }
 .done{
     margin-top: 13px;
+    margin-left: 10px;
     
 }
 .personadd{
     height: 40px;
     margin-top: 15px;
+}
+.cross-img{
+    height:20px;
+    margin-left:auto;
+    margin-top: 10px;
+    // border:1px solid red;
+}
+.image-name{
+    text-transform: capitalize;
+    color:white;
+    background-color: black;
+    height:30px;
+    width:40px;
+    border-radius: 20px;
+    // height:40px;
+    // border-radius: 30px;
+    font-size: 26px;
+    text-align: center;
+    // margin-top: 10px;
+    padding-top: 10px;
+    // margin: auto;
 }

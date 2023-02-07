@@ -1,8 +1,10 @@
-<div class="outer">
+<div class="outer" >
   <div
     class="MainDiv"
     *ngFor="let notes of childMessage | filterpipe : message"
-    [class.gridToList]="gridlist" [style.background]="notes.color">
+    [class.gridToList]="gridlist" [style.background]="notes.color" cdkDragBoundary=".example-boundary"  cdkDrag>
+    
+   
   
     <!-- <div class="colordiv" [style.background]="notes.color"> -->
       <div class="subDiv" >
@@ -12,8 +14,15 @@
       <div class="subDiv1">
         <p class="descline" (click)="openDialog(notes)">
           {{ notes.description }}
+          
         </p>
+        
       </div>
+      <!-- <div>
+        {{notes.collaborators.firstName[0]
+        }}
+      </div> -->
+
 
       <div class="footer-icons">
         <app-icons [notecard]="notes" (event)="recievemsg($event)" ></app-icons>
@@ -21,4 +30,5 @@
       </div>
     </div>
   <!-- </div> -->
+
 </div>

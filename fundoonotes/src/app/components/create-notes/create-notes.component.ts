@@ -1,5 +1,6 @@
 import { Component,EventEmitter,OnInit,Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteserviceService } from 'src/app/services/Notes/noteservice.service';
 @Component({
   selector: 'app-create-notes',
@@ -12,8 +13,9 @@ export class CreateNotesComponent implements OnInit{
   show=false;
   isShow:boolean=false;
   searchValue:any;
+  error:boolean=false;
   @Output() messageEvent = new EventEmitter<any>();
-  constructor(private formBuilder: FormBuilder,private note:NoteserviceService) { }
+  constructor(private formBuilder: FormBuilder,private note:NoteserviceService,private snackbar: MatSnackBar) { }
 
   ngOnInit() {
       this.NoteForm = this.formBuilder.group({
@@ -31,6 +33,7 @@ export class CreateNotesComponent implements OnInit{
     this.show=false;
     console.log('valid data',this.NoteForm.value);
     console.log('note created');
+    // window.location.reload(); 
   }
   onSubmit() {
     this.submitted = true;
@@ -48,26 +51,18 @@ export class CreateNotesComponent implements OnInit{
       this.note.add(notedata).subscribe((res:any)=>{
         console.log(res);
         this.messageEvent.emit(res);
+        this.NoteForm.reset();
+        
+      },
+      error => {
+        this.error = error;
+        // this.submitted = false;
       })
+     
     }
 
     
     
 }
-// get Title():any{
-//   return this.NoteForm.get('Title')
-// }
-// get Description():any{
-//   return this.NoteForm.get('Description')
-// }
-// clearinputmethod1(){
-//   this.Title.reset();
-//   this.Description.reser();
-// }
-// clearinputmethod2(){
-//   this.NoteForm.setValue({Title:'',Description:''});
-// }
-// clearSearch(){
-//   this.searchValue = '';
-// }
+
 }

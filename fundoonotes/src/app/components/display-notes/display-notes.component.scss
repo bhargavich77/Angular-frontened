@@ -1,123 +1,129 @@
 .MainDiv {
-    width: 19vw;
-    // min-height: 50px;
-    // max-height: 200px;
-    height:auto;
-    // border: 0px solid grey;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    margin:20px;
-    // border-radius: 10px;
-    // border:1px solid red;
-    // border: 1px solid gray;
-    border-color: rgb(113, 112, 112);
-    box-shadow: 1px 1px 3px 3px rgba(74, 77, 78, 0.22);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    margin: 20px auto;
-    margin-bottom: 30px;
-    margin-left: 4px;
-    margin-right: 30px;
-    // width: 300px;
-    height: 150px;
+  width: 19vw;
+  height: auto;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  border-color: rgb(113, 112, 112);
+// border: 1px solid red;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 20px auto;
+  margin-bottom: 30px;
+  margin-left: 4px;
+  margin-right: 30px;
+
+  height: 150px;
+  // cursor: move;
+  
 }
-.colordiv{
-    width: 19vw;
-    border: 1px solid grey;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 150px;
-   
-    border-radius: 10px;
+.example-boundary {
+  width: 19vw;
+  height:19vw;
+  max-width: 100%;
+  border: solid green 2px;
+}
+.colordiv {
+  width: 19vw;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 150px;
+  border-radius: 10px;
 }
 .subDiv {
-    width:100%;
-    height: 30%;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 15px;
-    // border:1px solid red;
+  width: 100%;
+  height: 30%;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+  // border:1px solid red;
 }
 .subDiv1 {
-    width: 100%;
-    height: 30%;
+  width: 100%;
+  height: 30%;
 }
 #btn {
-    border: none; 
-    font-size: 20px;
-    background-color: white;
-    margin-right: 20px;
-
+  border: none;
+  font-size: 20px;
+  background-color: white;
+  margin-right: 20px;
 }
-#push-icon{
-    height:30px;
-    width:30px;
-    margin-right:10px;
-}
-
-.footer-icons{
-    
-    display: flex;
-    
-    // border:1px solid red;
-    justify-content: space-between;
-    margin-bottom:5px;
-    width:100%;
-    padding-right:20px;
-    align-items: flex-start;
+#push-icon {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
 }
 
-.titleline{
-    margin-left:20px;
-    width:100%;
-    font-size: 20px;
-    font-weight: 500;
-    // border:1px solid red;
+.footer-icons {
+  display: flex;
+
+  // border:1px solid red;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  width: 100%;
+  padding-right: 20px;
+  align-items: flex-start;
 }
-.descline{
-    margin-left:20px;
-    width:100%;
-    font-size: 15px;
-    // border:1px solid red;
+
+.titleline {
+  margin-left: 20px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  // border:1px solid red;
 }
-.outer{
-    margin:auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    // margin-left:50px;
-    // justify-content: space-between;
-    // gap:-50px;
-    width:75vw;
-    // border:1px solid red;
-    
+.descline {
+  margin-left: 20px;
+  width: 100%;
+  font-size: 15px;
+  // border:1px solid red;
 }
-.gridToList{
-    width: 743px;
-    height: 150px;
-    margin-left: 242px;
-  }
-app-icons{
-    visibility: hidden;
+.outer {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 150px;
+  // justify-content: space-between;
+  // gap:0.000001rem;
+  width: auto;
+  // border:1px solid red;
 }
-.MainDiv:hover{
- app-icons{
-    visibility: visible;  
- }
- #push-icon{
+.gridToList {
+  width: 690px;
+  height: 150px;
+  margin-left: 267px;
+  // border:1px solid red;
+}
+app-icons {
+  visibility: hidden;
+}
+.MainDiv:hover {
+  app-icons {
     visibility: visible;
- }
+  }
+  #push-icon {
+    visibility: visible;
+  }
 }
-#push-icon{
-    visibility: hidden;
+#push-icon {
+  visibility: hidden;
 }
+
+
+
+
+
+

@@ -1,4 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { FilterpipePipe } from 'src/app/filterpipe.pipe';
+import { DisplayNotesComponent } from '../display-notes/display-notes.component';
 
 import { TrashComponent } from './trash.component';
 
@@ -8,7 +12,8 @@ describe('TrashComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrashComponent ]
+      declarations: [ TrashComponent,DisplayNotesComponent,FilterpipePipe ],
+      imports:[HttpClientModule,MatDialogModule]
     })
     .compileComponents();
 
